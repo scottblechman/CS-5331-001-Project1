@@ -1,5 +1,5 @@
 # VR Project 1
-Link to video of demo:
+Link to video of demo: <a href="https://github.com/scottblechman/CS-5331-001-Project1/blob/master/recording.mov">recording.mov</a>
 
 Link to project: <a href="https://rawgit.com/scottblechman/CS-5331-001-Project1/master/index.html">index.html</a>
 
