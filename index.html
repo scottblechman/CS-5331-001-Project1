@@ -11,14 +11,14 @@
 	<script>
     	window.addEventListener('touchend', function() {
 
-			var AudioContext = window.AudioContext || window.webkitAudioContext; 
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		var context = new window.AudioContext();
 
-			var buffer = AudioContext.createBuffer(1, 1, 22050);
-			var source = AudioContext.createBufferSource();
-			source.buffer = buffer;
-
-			source.connect(AudioContext.destination);
-			source.noteOn(0);
+		var oscillator = context.createOscillator();
+		oscillator.frequency.value = 400;
+		oscillator.connect(context.destination);
+		oscillator.start(0);
+		oscillator.stop(.5);    
 		}, false);
     </script>
 
