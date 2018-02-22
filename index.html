@@ -16,9 +16,10 @@
 
 		var oscillator = context.createOscillator();
 		oscillator.frequency.value = 400;
+		oscillator.gain.value = -50;
 		oscillator.connect(context.destination);
 		oscillator.start(0);
-		oscillator.stop(.5);    
+		oscillator.stop(.1);    
 		}, false);
     </script>
 
