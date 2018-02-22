@@ -8,20 +8,24 @@
 <body>
 	<!-- Enable audio playback on iOS -->
 	<script>
-      window.addEventListener('touchstart', function() {
+    	window.addEventListener('touchstart', function() {
 
-	// create empty buffer
-	var buffer = this.createBuffer(1, 1, 22050);
-	var source = this.createBufferSource();
-	source.buffer = buffer;
+			var AudioContext = window.AudioContext || window.webkitAudioContext || false; 
+			// create empty buffer
+			if(AudioContext) {
+				var context = new AudioContext;
 
-	// connect to output (your speakers)
-	source.connect(this.destination);
+				var buffer = context.createBuffer(1, 1, 22050);
+				var source = context.createBufferSource();
+				source.buffer = buffer;
 
-	// play the file
-	source.noteOn(0);
+				// connect to output (your speakers)
+				source.connect(context.destination);
 
-}, false);
+				// play the file
+				source.noteOn(0);
+			}
+		}, false);
     </script>
 
 <a-scene>
